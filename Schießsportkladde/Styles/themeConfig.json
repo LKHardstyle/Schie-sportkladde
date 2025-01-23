@@ -1,0 +1,17 @@
+﻿{
+  "primaryBgr": "#204e37", // Dunkles Grün als Hauptfarbe
+  "secondaryBgr": "#173e2a", // Noch dunkleres Grün als Sekundärfarbe
+  "primaryFgr": "#FFFFFF", // Weißer Text für Kontrast
+
+  "primaryBtnBgr": "#317f5e", // Mittelgrüner Buttonhintergrund
+  "secondaryBtnBgr": "indianRed", // Indisch Rot
+  "tertiaryBtnBgr": "fireBrick", // fireBrick
+  "primaryBtnFgr": "white", // Weißer Text für Buttons
+  "secondaryBtnFgr": "white",
+  "tertiaryBtnFgr": "white",
+
+  "primaryCbxBgr": "#c2b280",
+  "primaryTbxBgr": "#c2b280",
+  "primaryDgvBgr": "#c2b280",
+  "primaryDgvFgr": "#c2b280"
+}

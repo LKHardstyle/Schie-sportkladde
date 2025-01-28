@@ -102,6 +102,7 @@
             WettbewerbsGrid.Location = new Point(218, 227);
             WettbewerbsGrid.Margin = new Padding(5, 6, 5, 6);
             WettbewerbsGrid.Name = "WettbewerbsGrid";
+            WettbewerbsGrid.ReadOnly = true;
             WettbewerbsGrid.Size = new Size(452, 182);
             WettbewerbsGrid.TabIndex = 46;
             WettbewerbsGrid.CellClick += WettbewerbsGrid_CellClick;

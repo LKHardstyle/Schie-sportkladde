@@ -11,10 +11,10 @@ namespace DataAccessLayer.Contracts
     public interface IKladdenRepository
     {
         public event Action<string> OnError;        
-        public Task<List<JoinedKladde>> getKladde(int? schützeId = 0, string? date = null);
+        public Task<List<JoinedKladde>> getKladde(int ?schützeId = 0, string? date = null);
         public Task EditKladde(Kladde kladde);
         public Task AddKladde(Kladde kladde);
         public Task DeleteKladde(JoinedKladde kladde);
-        public Task<List<KladdenYear>> GetKladdenYears();
+        public Task<List<KladdenYear>> GetKladdenYears(int ?schützeId = 0);
     }
 }

@@ -60,11 +60,11 @@
             waffenToolStripMenuItem = new ToolStripMenuItem();
             wettbewerbeToolStripMenuItem = new ToolStripMenuItem();
             aufsichtenToolStripMenuItem = new ToolStripMenuItem();
+            statistikenToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
             testToolStripMenuItem = new ToolStripMenuItem();
             testToolStripMenuItem1 = new ToolStripMenuItem();
             SchützeLbl = new Label();
-            statistikenToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)KladdenGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PrintPb).BeginInit();
             KladdenMenuStrip.SuspendLayout();
@@ -79,6 +79,7 @@
             KladdenGrid.Location = new Point(14, 183);
             KladdenGrid.Margin = new Padding(5, 6, 5, 6);
             KladdenGrid.Name = "KladdenGrid";
+            KladdenGrid.ReadOnly = true;
             KladdenGrid.Size = new Size(1219, 751);
             KladdenGrid.TabIndex = 0;
             KladdenGrid.CellClick += KladdenGrid_CellClick;
@@ -344,6 +345,13 @@
             aufsichtenToolStripMenuItem.Text = "Aufsichten";
             aufsichtenToolStripMenuItem.Click += aufsichtenToolStripMenuItem_Click_1;
             // 
+            // statistikenToolStripMenuItem
+            // 
+            statistikenToolStripMenuItem.Name = "statistikenToolStripMenuItem";
+            statistikenToolStripMenuItem.Size = new Size(93, 25);
+            statistikenToolStripMenuItem.Text = "Statistiken";
+            statistikenToolStripMenuItem.Click += statistikenToolStripMenuItem_Click;
+            // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { testToolStripMenuItem });
@@ -371,13 +379,6 @@
             SchützeLbl.Size = new Size(86, 30);
             SchützeLbl.TabIndex = 4;
             SchützeLbl.Text = "Schütze";
-            // 
-            // statistikenToolStripMenuItem
-            // 
-            statistikenToolStripMenuItem.Name = "statistikenToolStripMenuItem";
-            statistikenToolStripMenuItem.Size = new Size(93, 25);
-            statistikenToolStripMenuItem.Text = "Statistiken";
-            statistikenToolStripMenuItem.Click += statistikenToolStripMenuItem_Click;
             // 
             // KladdenForm
             // 

@@ -46,6 +46,7 @@
             VereineGrid.Location = new Point(26, 175);
             VereineGrid.Margin = new Padding(5, 6, 5, 6);
             VereineGrid.Name = "VereineGrid";
+            VereineGrid.ReadOnly = true;
             VereineGrid.Size = new Size(641, 182);
             VereineGrid.TabIndex = 27;
             VereineGrid.CellClick += VereineGrid_CellClick;

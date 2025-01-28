@@ -104,6 +104,7 @@
             WaffenGrid.Location = new Point(204, 234);
             WaffenGrid.Margin = new Padding(5, 6, 5, 6);
             WaffenGrid.Name = "WaffenGrid";
+            WaffenGrid.ReadOnly = true;
             WaffenGrid.Size = new Size(883, 182);
             WaffenGrid.TabIndex = 46;
             WaffenGrid.CellClick += SchießständeGrid_CellClick;

@@ -286,6 +286,7 @@
             SchützenGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             SchützenGrid.Location = new Point(212, 483);
             SchützenGrid.Name = "SchützenGrid";
+            SchützenGrid.ReadOnly = true;
             SchützenGrid.Size = new Size(1170, 323);
             SchützenGrid.TabIndex = 26;
             SchützenGrid.CellClick += SchützenGrid_CellClick;

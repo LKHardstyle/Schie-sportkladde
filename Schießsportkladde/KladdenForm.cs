@@ -325,19 +325,21 @@ namespace Schießsportkladde
                 return;
 
             Kladde kladde = new Kladde();
-            SchützenName selectedSchützenId = SchützeCbx.SelectedItem as SchützenName;
-            WaffenNameDisziplin selectedWaffenId = WaffeCbx.SelectedItem as WaffenNameDisziplin;
+            SchützenName selectedSchützen = SchützeCbx.SelectedItem as SchützenName;
+            Wettbewerb selectedWettbewerb = WettbewerbCbx.SelectedItem as Wettbewerb;
+            WaffenNameDisziplin selectedWaffen = WaffeCbx.SelectedItem as WaffenNameDisziplin;
             Schießtstand selectedSchießstand = SchießstandCbx.SelectedItem as Schießtstand;
             Aufsicht selectedAufsicht = AufsichtCbx.SelectedItem as Aufsicht;
 
             kladde.Id = _kladdeToEditId;
-            kladde.SchützeId = selectedSchützenId.Id;
+            kladde.SchützeId = selectedSchützen.Id;
             kladde.Datum = DatumTxt.Text;
-            kladde.WaffeId = selectedWaffenId.Id;
+            kladde.WettbewerbId = selectedWettbewerb.Id;
+            kladde.WaffeId = selectedWaffen.Id;
             kladde.Schusszahl = Convert.ToInt32(SchusszahlTxt.Text);
             kladde.SchießstandId = selectedSchießstand.Id;
+            kladde.Ergebnis = int.Parse(ErgebnisTxt.Text);
             kladde.AufsichtId = selectedAufsicht.Id;
-
 
             _kladdenRepository.EditKladde(kladde);
 

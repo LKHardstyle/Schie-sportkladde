@@ -48,13 +48,13 @@ namespace DataAccessLayer.Repositories
         {
             try
             {
-                string query = "Select COUNT(*) AS [Weaponused], K.SchützeId, W.Name as Waffe From Kladde K join Waffen W on K.WaffeId = W.Id";               
+                string query = "Select COUNT(*) AS [Weaponused], K.Datum, K.SchützeId, W.Name as Waffe From Kladde K join Waffen W on K.WaffeId = W.Id";               
                 if (id != 0)
                 {
                     query += $" where K.SchützeId = {id}";
                 }
 
-                query += " GROUP BY K.SchützeId, W.Name";
+                query += " GROUP BY K.Datum, K.SchützeId, W.Name";
 
                 using (IDbConnection connection = new SqlConnection(ConnectionHelper.ConnectionString))
                 {

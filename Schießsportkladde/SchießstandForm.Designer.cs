@@ -101,6 +101,7 @@
             SchießständeGrid.Location = new Point(26, 168);
             SchießständeGrid.Margin = new Padding(5, 6, 5, 6);
             SchießständeGrid.Name = "SchießständeGrid";
+            SchießständeGrid.ReadOnly = true;
             SchießständeGrid.Size = new Size(641, 182);
             SchießständeGrid.TabIndex = 40;
             SchießständeGrid.CellClick += VerbändeGrid_CellClick;

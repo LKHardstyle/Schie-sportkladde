@@ -101,6 +101,7 @@
             VerbändeGrid.Location = new Point(26, 171);
             VerbändeGrid.Margin = new Padding(5, 6, 5, 6);
             VerbändeGrid.Name = "VerbändeGrid";
+            VerbändeGrid.ReadOnly = true;
             VerbändeGrid.Size = new Size(641, 182);
             VerbändeGrid.TabIndex = 34;
             VerbändeGrid.CellClick += VerbändeGrid_CellClick;

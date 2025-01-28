@@ -101,6 +101,7 @@
             AufsichtGrid.Location = new Point(162, 176);
             AufsichtGrid.Margin = new Padding(5, 6, 5, 6);
             AufsichtGrid.Name = "AufsichtGrid";
+            AufsichtGrid.ReadOnly = true;
             AufsichtGrid.Size = new Size(452, 182);
             AufsichtGrid.TabIndex = 40;
             AufsichtGrid.CellClick += AufsichtGrid_CellClick;

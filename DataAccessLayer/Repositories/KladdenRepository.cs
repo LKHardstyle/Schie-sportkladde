@@ -68,11 +68,15 @@ namespace DataAccessLayer.Repositories
                 return new List<JoinedKladde>();
             }
         }
-        public async Task<List<KladdenYear>> GetKladdenYears()
+        public async Task<List<KladdenYear>> GetKladdenYears(int? schützeId = 0)
         {
             try
             {
-               string query = "SELECT DISTINCT YEAR(CONVERT(DATE, SUBSTRING(Datum, 7, 4) + '-' + SUBSTRING(Datum, 4, 2) + '-' + SUBSTRING(Datum, 1, 2), 120)) AS Date FROM Kladde";
+                string query = "SELECT DISTINCT YEAR(CONVERT(DATE, SUBSTRING(Datum, 7, 4) + '-' + SUBSTRING(Datum, 4, 2) + '-' + SUBSTRING(Datum, 1, 2), 120)) AS Date FROM Kladde";
+                if (schützeId != 0)
+                {
+                    query += $" where SchützeId = {schützeId} AND Ergebnis != 0";
+                }
 
                 using (IDbConnection connection = new SqlConnection(ConnectionHelper.ConnectionString))
                 {
@@ -95,9 +99,11 @@ namespace DataAccessLayer.Repositories
                                 set
                                 SchützeId = @SchützeId,
                                 Datum = @Datum,
+                                WettbewerbId = @WettbewerbId,
                                 WaffeId = @WaffeId,
                                 Schusszahl = @Schusszahl,
                                 SchießstandId = @SchießstandId,
+                                Ergebnis = @Ergebnis,
                                 AufsichtId = @AufsichtId
                                 where Id = @Id";                
                 

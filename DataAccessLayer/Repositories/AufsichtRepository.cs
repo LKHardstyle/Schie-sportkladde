@@ -57,7 +57,10 @@ namespace DataAccessLayer.Repositories
             catch (Exception ex)
             {
                 string errorMessage = "Fehler beim Löschen der Aufsicht";
-                
+                if (ex is SqlException sqlEx)
+                {
+                    errorMessage = "Aufsicht ist noch in einer Kladde eingetragen  ";
+                }
                 ErrorOccured(errorMessage);
             }
         }

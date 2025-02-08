@@ -47,7 +47,7 @@ namespace DataAccessLayer.Repositories
             {
                 string query = @"Update Schießstände
                                 Set 
-                                Name = @Name
+                                Name = @Schießstand
                                 where Id = @Id";
 
                 using (IDbConnection connection = new SqlConnection(ConnectionHelper.ConnectionString))

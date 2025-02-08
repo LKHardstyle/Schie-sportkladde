@@ -34,8 +34,6 @@ namespace Schießsportkladde
             EditBtn.Visible = false;
             SafeBtn.Visible = true;
         }
-
-
         private void CustomizeGridData()
         {
 
@@ -66,12 +64,10 @@ namespace Schießsportkladde
             VerbändeGrid.Columns.Clear();
             VerbändeGrid.Columns.AddRange(columns);
         }
-
         private async void RefreshGridData()
         {
             VerbändeGrid.DataSource = await _verbandRepository.getVerband();
         }
-
         private async void SafeBtn_Click(object sender, EventArgs e)
         {
             if (!isValid())
@@ -86,7 +82,6 @@ namespace Schießsportkladde
             RefreshGridData();
             ClearAllFields();
         }
-
         private async void EditBtn_Click(object sender, EventArgs e)
         {
             if (!isValid())
@@ -145,7 +140,6 @@ namespace Schießsportkladde
                 }
             }
         }
-
         private void FillFormForEdit(Verband clickedVerband)
         {
             _verbandToEdit = clickedVerband.Id;
@@ -175,7 +169,6 @@ namespace Schießsportkladde
 
             return true; // If no validation is required, return true
         }
-
         private void NameTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!isValidTextBox(NameTxt.Text, e.KeyChar, true))
@@ -242,7 +235,6 @@ namespace Schießsportkladde
             VerbändeGrid.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
             VerbändeGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
         }
-
         private void ClearAllFieldsBtn_Click(object sender, EventArgs e)
         {
             ClearAllFields();

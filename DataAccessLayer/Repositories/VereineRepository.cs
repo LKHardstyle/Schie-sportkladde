@@ -92,19 +92,16 @@ namespace DataAccessLayer.Repositories
                 {
                     await connection.ExecuteAsync(query);
                 }
-
             }
             catch (Exception ex)
             {
                 string errorMessage = "Fehler beim Löschen des Schützen";
-
+                
                 if (ex is SqlException sqlEx)
                 {
-                    if (sqlEx.Number == 547)
-                    {
-                        errorMessage = "Verein ist noch einem Schützen zugewiesen";
-                    }
+                    errorMessage = "Verein ist noch einem Schützen zugewiesen";
                 }
+                ErrorOccured(errorMessage);
             }
         }
     }

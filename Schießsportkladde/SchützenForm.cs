@@ -306,7 +306,7 @@ namespace Schießsportkladde
                     return true;
                 }
 
-                // Allow only one '-' and it should be the first character
+                // Allow '-' and it should be the first character
                 if (keyPressed == '-' || keyPressed == (char)45)
                 {
                     return true;
@@ -318,7 +318,7 @@ namespace Schießsportkladde
             else if (onlyString == true)
             {
                 //Allow control keys ( backspace, delete, etc.)
-                if (char.IsControl(keyPressed))
+                if (char.IsControl(keyPressed) || char.IsWhiteSpace(keyPressed))
                 {
                     return true;
                 }

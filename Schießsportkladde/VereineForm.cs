@@ -24,9 +24,9 @@ namespace Schießsportkladde
         {
             InitializeComponent();
             _vereinRepository = vereineRepository;
+            _vereinRepository.OnError += (message) => MessageBox.Show(message);
             ApplyStyles();
         }
-
         private void VereineForm_Load(object sender, EventArgs e)
         {
             RefreshGridData();
@@ -35,12 +35,10 @@ namespace Schießsportkladde
             EditBtn.Visible = false;
             SafeBtn.Visible = true;
         }
-
         private async void RefreshGridData()
         {
             VereineGrid.DataSource = await _vereinRepository.getVereine();
         }
-
         private void CalculateGridWidth()
         {
             // Automatisches Anpassen der Spalten an den Inhalt
@@ -97,7 +95,6 @@ namespace Schießsportkladde
             VereineGrid.Columns.Clear();
             VereineGrid.Columns.AddRange(columns);
         }
-
         private void FillFormForEdit(Verein clickedVerein)
         {
             _vereinToEdit = clickedVerein.Id;
@@ -106,7 +103,6 @@ namespace Schießsportkladde
             EditBtn.Visible = true;
             SafeBtn.Visible = false;
         }
-
         private void ClearAllFields()
         {
             NameTxt.Text = string.Empty;
@@ -133,7 +129,6 @@ namespace Schießsportkladde
                 }
             }
         }
-
         private async void SafeBtn_Click(object sender, EventArgs e)
         {
             if (!isValid())
@@ -147,7 +142,6 @@ namespace Schießsportkladde
             RefreshGridData();
             ClearAllFields();
         }
-
         private async void EditBtn_Click(object sender, EventArgs e)
         {
             if (!isValid())
@@ -163,7 +157,6 @@ namespace Schießsportkladde
             RefreshGridData();
             ClearAllFields();
         }
-
         private bool isValid()
         {
             bool isValid = true;
@@ -209,7 +202,6 @@ namespace Schießsportkladde
                 e.Handled = true;
             }
         }
-
         private void VereineGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             CalculateGridWidth();
@@ -273,7 +265,6 @@ namespace Schießsportkladde
             VereineGrid.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
             VereineGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
         }
-
         private void ClearAllFieldsBtn_Click(object sender, EventArgs e)
         {
             ClearAllFields();

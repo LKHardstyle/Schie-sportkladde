@@ -76,6 +76,10 @@ namespace DataAccessLayer.Repositories
             catch (Exception ex)
             {
                 string errorMessage = "Fehler beim Löschen des Wettbewerbs";
+                if (ex is SqlException sqlEx)
+                {
+                    errorMessage = "Wettbewerb ist noch in einer Kladde eingetragen";
+                }
                 ErrorOccured(errorMessage);
             }
         }

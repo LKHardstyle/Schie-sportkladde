@@ -118,13 +118,11 @@ namespace DataAccessLayer.Repositories
             {
                 string errorMessage = "Fehler beim Löschen der Waffe";
 
-                if(ex is SqlException sqlEx)
+                if (ex is SqlException sqlEx)
                 {
-                    if(sqlEx.Number == 547)
-                    {
-                        errorMessage = "Waffe ist noch in einer Kladde eingetragen";
-                    }
+                    errorMessage = "Waffe ist noch in einer Kladde eingetragen  ";   
                 }
+                ErrorOccured(errorMessage);
             }
         }
     }
